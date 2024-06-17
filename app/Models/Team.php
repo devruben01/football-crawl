@@ -14,9 +14,9 @@ class Team extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'away_team_id',
-        'away_team_name',
-        'away_logo_url',
+        'team_id',
+        'team_name',
+        'logo_url',
     ];
 
     protected $casts = [

@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('vietlott', function (Blueprint $table) {
+        Schema::create('season', function (Blueprint $table) {
             $table->id();
-            $table->date('date');
-            $table->string('type', 20);
-            $table->json('result');
+            $table->unsignedInteger('season_id');
+            $table->datetime('season_start');
+            $table->datetime('season_end');
+            $table->string('season_year');
+            $table->unsignedInteger('tournament_id');
             $table->timestamps();
         });
     }
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('kqsx');
+        Schema::dropIfExists('season');
     }
 };

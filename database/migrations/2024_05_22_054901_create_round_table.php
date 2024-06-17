@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('kqsx', function (Blueprint $table) {
+        Schema::create('round', function (Blueprint $table) {
             $table->id();
-            $table->date('date');
-            $table->string('province', 20);
-            $table->string('region', 20);
-            $table->json('result');
+            $table->string('round_lang');
+            $table->unsignedInteger('round_type_id');
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('kqsx');
+        Schema::dropIfExists('round');
     }
 };

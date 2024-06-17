@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('compute', function (Blueprint $table) {
+        Schema::create('fixture', function (Blueprint $table) {
             $table->id();
-            $table->date('date');
-            $table->string('type', 20);
-            $table->json('result');
-            $table->boolean('run')->default(false);
+            $table->unsignedInteger('fixture_id');
+            $table->string('fixture_time');
+            $table->unsignedInteger('season_id');
+            $table->unsignedInteger('round_id');
+            $table->unsignedInteger('away_team_id');
+            $table->unsignedInteger('home_team_id');
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('compute');
+        Schema::dropIfExists('fixture');
     }
 };
