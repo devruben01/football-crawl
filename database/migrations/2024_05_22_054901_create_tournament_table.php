@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('tournament_name');
             $table->string('tournament_en_name');
             $table->string('tournament_url_name');
-            $table->string('logo_url');
+            $table->string('logo_url')->nullable();
+            $table->unsignedInteger('category_id');
             $table->timestamps();
         });
     }

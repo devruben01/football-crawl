@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\GetCategoryList;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/user', function (Request $request) {
@@ -10,6 +11,7 @@ Route::group([
     'prefix' => 'v1',
     'as' => 'v1.',
 ], function () {
+    Route::get('/category-list', GetCategoryList::class);
 });
 
 Route::fallback(function () {

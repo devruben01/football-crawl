@@ -14,6 +14,7 @@ class Tournament extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'category_id',
         'tournament_id',
         'tournament_name',
         'tournament_en_name',
@@ -23,4 +24,14 @@ class Tournament extends Model
 
     protected $casts = [
     ];
+
+    public function categoryTournament()
+    {
+        return $this->belongsTo(CategoryTournament::class);
+    }
+
+    public function season()
+    {
+        return $this->hasMany(Season::class);
+    }
 }

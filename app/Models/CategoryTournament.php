@@ -20,4 +20,13 @@ class CategoryTournament extends Model
 
     protected $casts = [
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+    public function tournament()
+    {
+        return $this->belongsTo(Tournament::class);
+    }
 }

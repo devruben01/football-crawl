@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedInteger('category_id');
             $table->string('category_name');
             $table->string('icon');
+            $table->unsignedInteger('continent_id');
             $table->timestamps();
         });
     }

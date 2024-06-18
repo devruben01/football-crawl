@@ -20,4 +20,9 @@ class Continent extends Model
 
     protected $casts = [
     ];
+
+    public function category()
+    {
+        return $this->hasMany(Category::class);
+    }
 }

@@ -14,6 +14,7 @@ class Category extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'continent_id',
         'category_id',
         'category_name',
         'icon',
@@ -21,4 +22,13 @@ class Category extends Model
 
     protected $casts = [
     ];
+
+    public function continent()
+    {
+        return $this->belongsTo(Continent::class);
+    }
+    public function tournament()
+    {
+        return $this->hasMany(Tournament::class);
+    }
 }
